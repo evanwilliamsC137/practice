@@ -1,15 +1,66 @@
-html {
-    background-image: url("../img/practice-background.jpeg");
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
 }
 
 
-.dope-header {
-    color: rebeccapurple;
-    text-decoration: underline;
-    text-align: center;
+nav {
+    background: gray;
+    color: whitesmoke;
 }
-h2 {
-    color: hotpink;
-    text-decoration: solid;
-    text-align: center;
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: .5em;
+}
+
+.card {
+    background: whitesmoke;
+    color: gray;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    padding: .5em;
+}
+
+.card img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+#main-content {
+    display: flex;
+}
+
+#main-stage {
+    flex-grow: 3;
+    background-color: lightblue;
+    height: 400px;
+    width: 300px;
+}
+#side-stage {
+    background-color: bisque;
+}
+
+footer ul {
+    display: flex;
+    list-style: none;
+    padding: .5em;
+    flex-direction: column;
+    align-content: center;
+}
+
+#copyright {
+    display: flex;
+    list-style: none;
+    padding: .5em;
+    background-color: goldenrod;
 }
