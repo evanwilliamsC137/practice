@@ -1,0 +1,30 @@
+html {
+    background: url("../img/Evan W. Headshots (02-12-2021)05826.jpg") no-repeat center center fixed transparent;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 90%;
+}
+
+
+header {
+    width: 100%;
+    max-width: 100%;
+    position: fixed;
+    z-index: 999;
+    background: transparent;
+}
+
+
+nav a {
+    font: 1.2em/1em sans-serif;
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+}
