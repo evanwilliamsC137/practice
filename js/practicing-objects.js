@@ -48,6 +48,7 @@ var salesReport = {
     date: '03-17-2015',
     office: 'Codeup',
     employees:{
+
         employ1: {
             employeeNumber: 1,
             firstName: 'Jane',
@@ -127,7 +128,15 @@ var salesReport = {
     }
 }
 
-
+salesReport.getEmployeeCount = function () {
+    var employs = this.employees;
+    var count = [];
+    for (var i = 0; i < employs.length; i++) {
+        ++count;
+    }
+    return count;
+}
+console.log(salesReport.getEmployeeCount());
 
 
 
