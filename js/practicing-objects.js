@@ -130,8 +130,6 @@ var salesReport = [
 }]
 
 
-
-
 // Exercise 3. On the salesReport object you made, add the following methods.
 // getEmployeeCount() should return the total number of employees
 // getTotalNumberOfSales() should return the total number of units sold
@@ -160,6 +158,9 @@ var salesReport = [
 //  getBalancesForActiveAndNonActive() should return the balance of all non-active accounts vs. the balance of all active accounts?
 //     this last method should return an object that looks like {"active-balances": 23000, "inactive-balances": 4000} w/ different numbers.
 
+const profileReport = {
+
+}
 
 // Exercise 6. Practice with assignment by reference
 // create a variable named person1 with a name property. Assign it a name property.
