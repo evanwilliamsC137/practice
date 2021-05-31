@@ -43,7 +43,8 @@ console.log(makeCar())
 // 11, Arthur Herbert, Fonzarelli, 23
 // 12, Betty, Boop, 67
 
-var salesReport = {
+var salesReport = [
+    {
     title: 'Monthly Sales Report',
     date: '03-17-2015',
     office: 'Codeup',
@@ -126,17 +127,8 @@ var salesReport = {
             salesUnits: 67
         }
     }
-}
+}]
 
-salesReport.getEmployeeCount = function () {
-    var employs = this.employees;
-    var count = [];
-    for (var i = 0; i < employs.length; i++) {
-        ++count;
-    }
-    return count;
-}
-console.log(salesReport.getEmployeeCount());
 
 
 
