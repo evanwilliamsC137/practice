@@ -1045,12 +1045,24 @@ const profileReport = {
         return count;
     },
 
+    sumOfBalances: function () {
+        let sum = 0;
+        for (var i = 0; i<profiles.length; i++) {
+            if (profiles[i].balance) {
+                console.log((profiles[i].balance).slice(1))
+                sum += parseInt(profiles[i].balance.slice(1));
+            }
+        }
+        return sum;
+    }
+
 
 
 }
 console.log("Total number of profiles: " + profileReport.getProfileCount())
 console.log("Total number of active profiles: " + profileReport.getActiveCount())
 console.log("Total number of inactive profiles: " + profileReport.getInActiveCount())
+console.log("Total sum of balances is: " + profileReport.sumOfBalances())
 
 // Exercise 6. Practice with assignment by reference
 // create a variable named person1 with a name property. Assign it a name property.
