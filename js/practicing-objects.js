@@ -1049,12 +1049,33 @@ const profileReport = {
         let sum = 0;
         for (var i = 0; i<profiles.length; i++) {
             if (profiles[i].balance) {
-                console.log((profiles[i].balance).slice(1))
-                sum += parseInt(profiles[i].balance.slice(1));
+                sum += parseFloat(profiles[i].balance.replace(/[^0-9\.]+/g,""));
             }
         }
         return sum;
-    }
+    },
+
+    averageBalance: function () {
+        let average = 0;
+        for (var i = 0; i<profiles.length; i++) {
+            if (profiles[i].balance) {
+                average += parseFloat(profiles[i].balance.replace(/[^0-9\.]+/g,"")) / profiles.length;
+            }
+        }
+        return average.toFixed(2);
+    },
+
+    getLowestBalance: function () {
+        for (var i = 0; i<profiles.length; i++) {
+            console.log(Math.floor(parseFloat(profiles[i].balance.replace(/[^0-9\.]+/g,""))))
+        }
+    },
+
+    getHighestBalance: function () {
+        for (var i = 0; i<profiles.length; i++) {
+                console.log(parseFloat(profiles[i].balance.replace(/[^0-9\.]+/g,"")))
+        }
+    },
 
 
 
@@ -1063,6 +1084,9 @@ console.log("Total number of profiles: " + profileReport.getProfileCount())
 console.log("Total number of active profiles: " + profileReport.getActiveCount())
 console.log("Total number of inactive profiles: " + profileReport.getInActiveCount())
 console.log("Total sum of balances is: " + profileReport.sumOfBalances())
+console.log("Average of balances is: " + profileReport.averageBalance())
+console.log("Lowest balance is: " + profileReport.getLowestBalance())
+console.log("Highest balance is: " + profileReport.getHighestBalance())
 
 // Exercise 6. Practice with assignment by reference
 // create a variable named person1 with a name property. Assign it a name property.
