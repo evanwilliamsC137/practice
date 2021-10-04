@@ -1066,15 +1066,25 @@ const profileReport = {
     },
 
     getLowestBalance: function () {
+
+
         for (var i = 0; i<profiles.length; i++) {
-            console.log(Math.floor(parseFloat(profiles[i].balance.replace(/[^0-9\.]+/g,""))))
+            // console.log(parseFloat(profiles[i].balance.replace(/[^0-9\.]+/g,"")))
+            var max = -Infinity;
+            var low = parseFloat(Math.min(profiles[i].balance.replace(/[^0-9\.]+/g,"")))
+            if (low > max) {
+                console.log(low[i])
+            }
         }
     },
 
     getHighestBalance: function () {
-        for (var i = 0; i<profiles.length; i++) {
-                console.log(parseFloat(profiles[i].balance.replace(/[^0-9\.]+/g,"")))
-        }
+
+        var high = [1,2,3,4,5];
+        return Math.max()
+        // for (var i = 0; i<profiles.length; i++) {
+        //         console.log(parseFloat(profiles[i].balance.replace(/[^0-9\.]+/g,"")))
+        // }
     },
 
 
