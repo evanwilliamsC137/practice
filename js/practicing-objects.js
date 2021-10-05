@@ -1066,22 +1066,21 @@ const profileReport = {
     },
 
     getLowestBalance: function () {
-
+        let low = [0];
 
         for (var i = 0; i<profiles.length; i++) {
-            // console.log(parseFloat(profiles[i].balance.replace(/[^0-9\.]+/g,"")))
-            var max = -Infinity;
-            var low = parseFloat(Math.min(profiles[i].balance.replace(/[^0-9\.]+/g,"")))
-            if (low > max) {
-                console.log(low[i])
+            if (profiles[i].balance) {
+                low = parseFloat(profiles[i].balance.replace(/[^0-9\.]+/g,""));
+                console.log(low)
             }
         }
+        return Math.min(parseFloat(low))
     },
 
     getHighestBalance: function () {
 
         var high = [1,2,3,4,5];
-        return Math.max()
+        return Math.max(parseFloat(high))
         // for (var i = 0; i<profiles.length; i++) {
         //         console.log(parseFloat(profiles[i].balance.replace(/[^0-9\.]+/g,"")))
         // }
