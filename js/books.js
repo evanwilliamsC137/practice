@@ -38,5 +38,20 @@ const chuthulu = new Books(
     false
 );
 
+const content = `
+    <main>
+        <article>
+            <div>
+                <h1>Title: ${fightClub.name}</h1>
+                <h5>Author: ${fightClub.author}</h5>
+                <h5>Genre: ${fightClub.genre}</h5>
+                <h5>Book open: ${fightClub.bookOpen}</h5>
+            </div>
+        </article>
+    </main>
+`;
+
+document.body.innerHTML = content;
+
 console.log(fightClub);
 console.log(chuthulu);

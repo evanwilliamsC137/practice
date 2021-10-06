@@ -1066,24 +1066,25 @@ const profileReport = {
     },
 
     getLowestBalance: function () {
-        let low = [0];
-
-        for (var i = 0; i<profiles.length; i++) {
-            if (profiles[i].balance) {
-                low = parseFloat(profiles[i].balance.replace(/[^0-9\.]+/g,""));
-                console.log(low)
-            }
+        let lowest = [];
+        for (let i = 0; i<profiles.length; i++) {
+            lowest.push(parseFloat(profiles[i].balance.replace(/[^0-9\.]+/g,"")))
         }
-        return Math.min(parseFloat(low))
+        lowest.sort(function (a,b) {
+            return a-b;
+        })
+        return lowest[0];
     },
 
     getHighestBalance: function () {
-
-        var high = [1,2,3,4,5];
-        return Math.max(parseFloat(high))
-        // for (var i = 0; i<profiles.length; i++) {
-        //         console.log(parseFloat(profiles[i].balance.replace(/[^0-9\.]+/g,"")))
-        // }
+        let highest = [];
+        for (let i = 0; i<profiles.length; i++) {
+            highest.push(parseFloat(profiles[i].balance.replace(/[^0-9\.]+/g,"")))
+        }
+        highest.sort(function (a,b) {
+            return b-a;
+        })
+        return highest[0];
     },
 
 
