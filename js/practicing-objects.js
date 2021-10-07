@@ -1087,6 +1087,54 @@ const profileReport = {
         return highest[0];
     },
 
+    getMostFavoriteFruit: function () {
+        let strawberry = [];
+        let banana = [];
+        let apple = [];
+        for (let i = 0; i<profiles.length; i++) {
+            if (profiles[i].favoriteFruit === "strawberry") {
+                strawberry++
+            }else if (profiles[i].favoriteFruit === "banana") {
+                banana++
+            }else if (profiles[i].favoriteFruit === "apple") {
+                apple++
+            }
+        }
+        if (strawberry > (apple || banana)) {
+            return "Strawberry"
+        }else if (banana > (apple || strawberry)) {
+            return "Banana"
+        }else if (apple > (strawberry || banana)) {
+            return "Apple"
+        }
+    },
+
+    getLeastFavoriteFruit: function () {
+        let strawberry = [];
+        let banana = [];
+        let apple = [];
+        for (let i = 0; i<profiles.length; i++) {
+            if (profiles[i].favoriteFruit === "strawberry") {
+                strawberry++
+            }else if (profiles[i].favoriteFruit === "banana") {
+                banana++
+            }else if (profiles[i].favoriteFruit === "apple") {
+                apple++
+            }
+        }
+        if (strawberry < (apple || banana)) {
+            return "Strawberry"
+        }else if (banana < (apple || strawberry)) {
+            return "Banana"
+        }else if (apple < (strawberry || banana)) {
+            return "Apple"
+        }
+    },
+
+    getTotalNumberOfUnreadMessages: function () {
+
+    }
+
 
 
 }
@@ -1097,6 +1145,9 @@ console.log("Total sum of balances is: " + profileReport.sumOfBalances())
 console.log("Average of balances is: " + profileReport.averageBalance())
 console.log("Lowest balance is: " + profileReport.getLowestBalance())
 console.log("Highest balance is: " + profileReport.getHighestBalance())
+console.log("Favorite fruit is: " + profileReport.getMostFavoriteFruit())
+console.log("Least Favorite fruit is: " + profileReport.getLeastFavoriteFruit())
+console.log("Total number of unread messages is: " + profileReport.getTotalNumberOfUnreadMessages())
 
 // Exercise 6. Practice with assignment by reference
 // create a variable named person1 with a name property. Assign it a name property.
