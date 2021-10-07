@@ -1229,6 +1229,16 @@ console.log("Active and Inactive balances are: " + profileReport.getBalancesForA
 // Why do you think changing person2 altered person1?
 // The term for this behavior is assignment by reference.
 
+let person1 = {
+    name: "Evan"
+}
+let person2 = {
+    name: person1.name
+}
+
+person2.name = "Bob";
+
+console.log(person1.name)
 
 // Exercise 7. More practice with assignment by reference
 // Add the following HTML to your index.html page in this project.
