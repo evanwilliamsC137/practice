@@ -1114,13 +1114,9 @@ const profileReport = {
         let banana = [];
         let apple = [];
         for (let i = 0; i<profiles.length; i++) {
-            if (profiles[i].favoriteFruit === "strawberry") {
-                strawberry++
-            }else if (profiles[i].favoriteFruit === "banana") {
-                banana++
-            }else if (profiles[i].favoriteFruit === "apple") {
-                apple++
-            }
+            if (profiles[i].favoriteFruit === "strawberry") {strawberry++}
+            else if (profiles[i].favoriteFruit === "banana") {banana++}
+            else if (profiles[i].favoriteFruit === "apple") {apple++}
         }
         if (strawberry < (apple || banana)) {
             return "Strawberry"
@@ -1132,7 +1128,27 @@ const profileReport = {
     },
 
     getTotalNumberOfUnreadMessages: function () {
+        let total = [];
+        for (let i = 0; i<profiles.length; i++) {
+            total.push(parseFloat(profiles[i].greeting.replace(/[^0-9]/g, '')))
+        }
+        return eval(total.join("+"));
+    },
 
+    getAverageNumberOfUnreadMessages: function () {
+        let total = [];
+        for (let i = 0; i<profiles.length; i++) {
+            total.push(parseFloat(profiles[i].greeting.replace(/[^0-9]/g, '')))
+        }
+        return (eval(total.join("+"))/profiles.length).toFixed(0);
+    },
+
+    getAverageAge: function () {
+        let age = [];
+        for (let i = 0; i<profiles.length; i++) {
+            age.push(profiles[i].age);
+        }
+        return (eval(age.join("+")) / profiles.length).toFixed(0);
     }
 
 
@@ -1148,6 +1164,8 @@ console.log("Highest balance is: " + profileReport.getHighestBalance())
 console.log("Favorite fruit is: " + profileReport.getMostFavoriteFruit())
 console.log("Least Favorite fruit is: " + profileReport.getLeastFavoriteFruit())
 console.log("Total number of unread messages is: " + profileReport.getTotalNumberOfUnreadMessages())
+console.log("Average number of unread messages is: " + profileReport.getAverageNumberOfUnreadMessages())
+console.log("Average age is: " + profileReport.getAverageAge())
 
 // Exercise 6. Practice with assignment by reference
 // create a variable named person1 with a name property. Assign it a name property.
