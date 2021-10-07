@@ -1149,6 +1149,56 @@ const profileReport = {
             age.push(profiles[i].age);
         }
         return (eval(age.join("+")) / profiles.length).toFixed(0);
+    },
+
+    getGenderCounts: function () {
+        let genders = { m:0, f:0}
+        for (let i = 0; i<profiles.length; i++) {
+            if (profiles[i].gender === "male") {
+                genders.m++
+            }else if (profiles[i].gender === "female") {
+                genders.f++
+            }
+        }
+        return genders
+    },
+     getCompanyNames: function () {
+        let companies = [];
+        for (let i = 0; i<profiles.length; i++) {
+            companies.push(profiles[i].company + " ")
+        }
+        return companies;
+     },
+
+    getMostCommonEyeColor: function () {
+        let blue = [];
+        let brown = [];
+        let green = [];
+        for (let i = 0; i<profiles.length; i++) {
+            if (profiles[i].eyeColor === "blue") {blue++}
+            else if (profiles[i].eyeColor === "brown") {brown++}
+            else if (profiles[i].eyeColor === "green") {green++}
+        }
+        if (blue > (green || brown)) {
+            return "blue"
+        }else if (brown > (blue || green)) {
+            return "Brown"
+        }else if (green > (blue || brown)) {
+            return "Green"
+        }
+    },
+
+    getBalancesForActiveAndNonActive: function () {
+        let activeBalance = [];
+        let inActiveBalance = [];
+        for (let i = 0; i<profiles.length; i++) {
+            if (profiles[i].isActive) {
+                activeBalance.push(parseFloat(profiles[i].balance.replace(/[^0-9\.]+/g,"")))
+            }else if (!profiles[i].isActive) {
+                inActiveBalance.push(parseFloat(profiles[i].balance.replace(/[^0-9\.]+/g,"")))
+            }
+        }
+        return "Active: $" + eval(activeBalance.join("+")).toFixed(0) + ", " + "InActive: $" + eval(inActiveBalance.join("+")).toFixed(0);
     }
 
 
@@ -1166,6 +1216,10 @@ console.log("Least Favorite fruit is: " + profileReport.getLeastFavoriteFruit())
 console.log("Total number of unread messages is: " + profileReport.getTotalNumberOfUnreadMessages())
 console.log("Average number of unread messages is: " + profileReport.getAverageNumberOfUnreadMessages())
 console.log("Average age is: " + profileReport.getAverageAge())
+console.log("Gender count is: " + "m: " + profileReport.getGenderCounts().m + " f: " + profileReport.getGenderCounts().f)
+console.log("Company names are: " + profileReport.getCompanyNames())
+console.log("Most common eye color is: " + profileReport.getMostCommonEyeColor())
+console.log("Active and Inactive balances are: " + profileReport.getBalancesForActiveAndNonActive())
 
 // Exercise 6. Practice with assignment by reference
 // create a variable named person1 with a name property. Assign it a name property.
