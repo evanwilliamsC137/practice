@@ -41,7 +41,7 @@ calc(2)
 
 function fibonacci() {
     for (let n = 1; n < 25; n++) {
-        console.log(((p.toExponential(n) - (- 1/p).toExponential(n)) / Math.sqrt(5)))
+        console.log(((p**n - (- 1/p)**n) / Math.sqrt(5)))
     }
 }
 
